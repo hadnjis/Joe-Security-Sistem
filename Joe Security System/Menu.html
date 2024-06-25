@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Seguridad del Sistema Joe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://ai-concept.fr/wp-content/uploads/2023/01/AI-CONCEPT-SUPERVISION-1.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #E0E0E0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(31, 31, 31, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFF55C;
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .menu a {
+            color: #E0E0E0;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .navbar .menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: #FFF55C;
+            transition: width 0.4s ease;
+            -webkit-transition: width 0.4s ease;
+        }
+
+        .navbar .menu a:hover::after {
+            width: 100%;
+            left: 0;
+            background: #FFF55C;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 8px;
+            opacity: 0.9;
+        }
+
+        .dropdown-content a {
+            color: #E0E0E0;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #444;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .marquee-container {
+            background-color: rgba(31, 31, 31, 0.9);
+            color: #FFF55C;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .content {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .icon {
+            font-size: 50px;
+            color: #FFF55C;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .icon:hover {
+            transform: scale(1.2);
+            color: #FFF000;
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar .menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .marquee-container {
+                font-size: 16px;
+            }
+
+            .icon-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .icon {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Joe Security System</div>
+        <div class="menu">
+            <a href="Creditos.html">Creditos</a>
+            <div class="dropdown">
+                <a href="#">¿Quienes Somos?</a>
+                <div class="dropdown-content">
+                    <a href="Contacto.html">Contacto</a>
+                    <a href="a.html">Historia</a>
+                    <a href="Articulos.html">Articulos</a>
+                </div>
+            </div>
+            <a href="https://www.google.com.mx/maps/place/Higueras+35A,+Las+Bellotas,+84094+Heroica+Nogales,+Son./@31.2776887,-110.9541719,19z/data=!3m1!4b1!4m6!3m5!1s0x86d15302e0742a37:0x87d78ab8b4d5bb36!8m2!3d31.2776887!4d-110.9535282!16s%2Fg%2F11c5f6j4cf?entry=ttuhttps://www.google.com.mx/maps/place/Higueras+35A,+Las+Bellotas,+84094+Heroica+Nogales,+Son./@31.2776887,-110.9541719,19z/data=!3m1!4b1!4m6!3m5!1s0x86d15302e0742a37:0x87d78ab8b4d5bb36!8m2!3d31.2776887!4d-110.9535282!16s%2Fg%2F11c5f6j4cf?entry=ttu">Ubicacion</a>
+        </div>
+    </div>
+    <div class="marquee-container">
+        <div class="marquee">¡Séptimo Aniversario de Joe Security System!</div>
+    </div>
+    <div class="content">
+        <h1>Bienvenido a Joe Security System</h1>
+        <p>Protegiendo tu información con tecnología avanzada y experiencia.</p>
+        <div class="icon-container">
+            <i class="fas fa-shield-alt icon"></i>
+            <i class="fas fa-lock icon"></i>
+            <i class="fas fa-user-secret icon"></i>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créditos - Seguridad del Sistema Joe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #E0E0E0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .credits-container {
+            background-color: rgba(31, 31, 31, 0.9);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #FFF55C;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .team {
+            margin-top: 30px;
+        }
+
+        .team-member {
+            margin-bottom: 20px;
+        }
+
+        .team-member h3 {
+            margin: 5px 0;
+            font-size: 20px;
+            color: #E0E0E0;
+        }
+
+        .team-member p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #A0A0A0;
+        }
+
+        .back-button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #FFF55C;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #FFD700;
+        }
+
+        .small-gif {
+            width: 80px;
+            margin: 10px; 
+        }
+
+        @media (max-width: 600px) {
+            .credits-container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .team-member h3 {
+                font-size: 18px;
+            }
+
+            .team-member p {
+                font-size: 14px;
+            }
+
+            .back-button {
+                font-size: 14px;
+            }
+
+            .small-gif {
+                width: 60px; 
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 800px;
+            color: #fff;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .title {
+            font-size: 50px;
+            margin-top: 20px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .creditos {
+            font-size: 24px;
+            color: white;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .creditos p {
+            margin-bottom: 10px;
+        }
+        .creditos .t {
+            font-size: 30px; 
+            color: #00bcd4;
+            margin-top: 15px;
+            border-bottom: 1px solid #00bcd4;
+            padding-bottom: 5px;
+        }
+        .creditos a {
+            color: #00bcd4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .creditos a:hover {
+            color: #ff4081;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="credits-container">
+        <h1>Créditos</h1>
+        <div class="team">
+            <div class="team-member">
+                <h3>Flores Acosta Nicolas</h3>
+                <p>Desarrollador Principal</p>
+            </div>
+            <section>
+                <a href="Gracias.html">
+                    <img id="im" class="small-gif" src="https://www.pngall.com/wp-content/uploads/13/CCTV-Camera-Surveillance-PNG-File.png" alt="relojo">
+                </a>
+                <a href="Gracias.html">
+                    <img id="gifi" class="small-gif" src="https://media1.giphy.com/media/13cA5MoP9Qas48/giphy.gif" alt="GIF de reloj retro Casio">
+                </a>
+            </section>
+            <section>
+                <p class='t'>Páginas externas</p>
+                <p><a href='https://www.google.com.mx/maps/place/Higueras+35A,+Las+Bellotas,+84094+Heroica+Nogales,+Son./@31.2776887,-110.9541719,19z/data=!3m1!4b1!4m6!3m5!1s0x86d15302e0742a37:0x87d78ab8b4d5bb36!8m2!3d31.2776887!4d-110.9535282!16s%2Fg%2F11c5f6j4cf?entry=ttu' target='_blank'>Google Maps</a></p>
+            </section>
+            <section>
+                <p class='t'>Ultima actualizacion</p>
+                <p>23/06/27</p>
+            </section>
+        </div>
+        <button class="back-button" onclick="window.location.href='Menu.html'">Volver</button>
+    </div>
+</body>
+</html>

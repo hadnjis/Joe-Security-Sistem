@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias por visitarnos - Joe Security System</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #E0E0E0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .G-container {
+            background-color: rgba(31, 31, 31, 0.9);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #FFF55C;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .mascara1 {
+            width: 120px;
+            height: 120px;
+            background-color: #FFD700;
+            clip-path: polygon(
+                50% 0%, 
+                61% 35%, 
+                98% 35%, 
+                68% 57%, 
+                79% 91%, 
+                50% 70%, 
+                21% 91%, 
+                32% 57%, 
+                2% 35%, 
+                39% 35%
+            );
+            margin: 10px;
+        }
+
+        .game-link {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            background-color: #FFF55C;
+            color: #121212;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .game-link:hover {
+            background-color: #FFD700;
+        }
+
+        .thanks-message {
+            margin-top: 30px;
+        }
+
+        .thanks-message p {
+            font-style: italic;
+        }
+
+        .memory-game {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .memory-tile {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: #2196F3;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 1;
+        }
+
+        .memory-tile.clicked {
+            transform: scale(0.9);
+        }
+
+        .memory-tile.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        @media (max-width: 600px) {
+            .G-container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .mascara1, .mascara2 {
+                width: 100px;
+                height: 100px;
+            }
+
+            .game-link {
+                font-size: 16px;
+                padding: 12px 24px;
+            }
+
+            .memory-tile {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="G-container">
+        <h1>¡Gracias por visitarnos!</h1>
+        <div class="mascaras-section">
+            <div class="mascara1"></div>
+            <div class="mascara2"></div>
+        </div>
+    
+        <div class="G-message">
+            <p>Esperamos que hayas disfrutado de nuestra página y de los contenidos que ofrecemos.</p>
+            <p>¡Vuelve pronto!</p>
+        </div>
+        <div class="memory-game">
+            <div class="memory-tile" onclick="handleTileClick(this)"></div>
+            <div class="memory-tile" onclick="handleTileClick(this)"></div>
+            <div class="memory-tile" onclick="handleTileClick(this)"></div>
+            <div class="memory-tile" onclick="handleTileClick(this)"></div>
+            <div class="memory-tile" onclick="handleTileClick(this)"></div>
+            <div class="memory-tile" onclick="handleTileClick(this)"></div>
+        </div>
+    </div>
+
+    <script>
+        let clickedTiles = [];
+
+        function handleTileClick(tile) {
+            tile.classList.add('clicked');
+            clickedTiles.push(tile);
+
+            if (clickedTiles.length === 5) {
+                setTimeout(() => {
+                    clickedTiles.forEach(tile => tile.classList.remove('clicked'));
+                    clickedTiles = [];
+                }, 1000);
+            }
+        }
+
+        function toggleGameVisibility() {
+            const tiles = document.querySelectorAll('.memory-tile');
+            tiles.forEach(tile => tile.classList.toggle('hidden'));
+        }
+
+        setTimeout(toggleGameVisibility, 3000);
+    </script>
+</body>
+</html>
