@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe System Security</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #E0E0E0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .form-container {
+            background-color: #1f1f1f;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .form-container.hidden {
+            display: none;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #FFF55C;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            margin-bottom: 20px;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background-color: #333;
+            color: #E0E0E0;
+        }
+
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background-color: #FFF000;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #FFF000;
+        }
+
+        .alt-button {
+            background-color: transparent;
+            color: #FFF55C;
+            border: 1px solid #FFF55C;
+            margin-top: 10px;
+        }
+
+        .alt-button:hover {
+            background-color: #FFF55C;
+            color: #1f1f1f;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            input, button {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="loginFormContainer" class="form-container">
+            <h1>Seguridad del Sistema Joe</h1>
+            <form id="loginForm" class="form">
+                <input type="text" id="username" placeholder="Nombre de usuario" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            <button id="registerButton" class="alt-button">Registrarse</button>
+        </div>
+        <div id="registerFormContainer" class="form-container hidden">
+            <h1>Registro</h1>
+            <form id="registerForm" class="form">
+                <input type="text" id="regUsername" placeholder="Nombre de usuario" required>
+                <input type="password" id="regPassword" placeholder="Contraseña" required>
+                <button type="submit">Registrarse</button>
+            </form>
+            <button id="backButton" class="alt-button">Volver al Inicio de Sesión</button>
+        </div>
+    </div>
+    <script>
+        const users = [];
+
+        document.getElementById('registerButton').addEventListener('click', () => {
+            document.getElementById('loginFormContainer').classList.add('hidden');
+            document.getElementById('registerFormContainer').classList.remove('hidden');
+        });
+
+        document.getElementById('backButton').addEventListener('click', () => {
+            document.getElementById('registerFormContainer').classList.add('hidden');
+            document.getElementById('loginFormContainer').classList.remove('hidden');
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const user = users.find(user => user.username === username && user.password === password);
+
+            if (user) {
+                window.location.href = 'Menu.html';
+            } else {
+                alert('Nombre de usuario o contraseña incorrectos');
+            }
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const username = document.getElementById('regUsername').value;
+            const password = document.getElementById('regPassword').value;
+
+            const userExists = users.some(user => user.username === username);
+
+            if (userExists) {
+                alert('El nombre de usuario ya existe');
+            } else {
+                users.push({ username, password });
+                alert(`¡Usuario ${username} registrado con éxito!`);
+                document.getElementById('registerFormContainer').classList.add('hidden');
+                document.getElementById('loginFormContainer').classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
